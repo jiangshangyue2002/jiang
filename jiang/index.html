@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<link rel="stylesheet" href="css/style.css">
+		<title></title>
+	</head>
+	<body>
+		<div class="container">
+			<header>
+				<div class="item active">one</div>
+				<div class="item">two</div>
+				<div class="item">three</div>
+				<div class="item">four</div>
+				<div class="item">five</div>
+			</header>
+			<div class="main">
+				<div class="one box"></div>
+				<div class="two box">
+					<div class="top"></div>
+					<div class="content"></div>
+					<div class="bottom"></div>
+				</div>
+				<div class="three box">
+					<div class="content_l"></div>
+					<div class="content_r"></div>
+				</div>
+				<div class="four box">
+					<div class="top"></div>
+					<div class="content">
+						<div class="content_l"></div>
+						<div class="content_r"></div>
+					</div>
+					<div class="bottom"></div>
+				</div>
+				<div class="five box">
+					<div class="head"></div>
+					<div class="top"></div>
+					<div class="content">
+						<div class="content_l"></div>
+						<div class="content_m"></div>
+						<div class="content_r"></div>
+					</div>
+					<div class="bottom"></div>
+				</div>
+			</div>
+		</div>
+		
+		<script src="https://cdn.staticfile.org/jquery/1.10.2/jquery.min.js"></script>
+		<script>
+			$('.box').hide()
+			$('.box').eq(0).show()
+			$('header .item').click(function(){
+				let index = $(this).index()
+				$(this).addClass('active').siblings().removeClass('active')
+				$('.box').eq(index).show().siblings().hide()
+			})
+		</script>
+	</body>
+</html>
